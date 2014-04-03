@@ -1,0 +1,22 @@
+{
+  "name": "k",
+  "version": "0.1.0",
+  "author": "sheetjs",
+  "description": "spreadsheet diff",
+  "keywords": [ "xls", "xlsx", "xlsm", "xlsb", "office", "excel", "spreadsheet" ],
+  "bin": {
+    "k": "./bin/k.njs"
+  },
+  "main": "./k",
+  "dependencies": {
+    "j": "",
+    "commander":""
+  },
+  "devDependencies": {
+    "mocha":""
+  },
+  "repository": { "type":"git", "url":"https://github.com/SheetJS/k.git" },
+  "bugs": { "url": "https://github.com/SheetJS/k/issues" },
+  "license": "Apache-2.0",
+  "engines": { "node": ">=0.10" }
+}
