@@ -14,11 +14,11 @@ npm install -g k
 $ k file_1 file_2
 ```
 
-The process will exit with code 0 if the two files are deemed to be the same.
+The process will exit with code 0 if and only if the two files are deemed to be the same.
 
 ## Difference Algorithm
 
-Currently, only the sheet names are compared.
+Currently, only the sheet names and CSV outputs are compared.
 
 ## Supported Formats
 
