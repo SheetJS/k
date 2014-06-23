@@ -1,6 +1,6 @@
 {
   "name": "k",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": "sheetjs",
   "description": "spreadsheet diff",
   "keywords": [ "xls", "xlsx", "xlsm", "xlsb", "office", "excel", "spreadsheet", "diff"],

@@ -49,6 +49,9 @@ try {
 	process.exit(4);
 }
 
+var fma1 = K.J.utils.to_formulae(w1);
+var fma2 = K.J.utils.to_formulae(w2);
+
 var csv1 = K.J.utils.to_csv(w1);
 var csv2 = K.J.utils.to_csv(w2);
 
@@ -56,11 +59,18 @@ for(var i=0, j=0; i<wb1.SheetNames.length || j<wb2.SheetNames.length; ++i, ++j){
 	/* verify sheet names are equal */
 	if(wb1.SheetNames[i] !== wb2.SheetNames[j]) {
 		console.error("k: sheet " + i + "," + j + " mismatch: " + wb1.SheetNames[i] + " != " + wb2.SheetNames[j]);
-		process.exit(5); 
+		process.exit(5);
 	}
 	var s = wb1.SheetNames[i];
+	/* verify formulae outputs are equal */
+	if(fma1[s] != null && fma2[s] != null) {
+		if(fma1[s].join('\n') !== fma2[s].join('\n')) {
+			console.error("k: sheet " + s + " formula mismatch");
+			process.exit(6);
+		}
+	}
 	/* verify csv outputs are equal */
-	if(csv1[s] != csv2[s]) {
+	if(csv1[s] !== csv2[s]) {
 		console.error("k: sheet " + s + " csv mismatch");
 		process.exit(6);
 	}
